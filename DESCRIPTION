@@ -1,0 +1,18 @@
+Package: DoordaHostClient
+Type: Package
+Title: DoordaHost Platform DBI Wrapper
+Version: 309.0.0
+Author: Samuel Tan <samuel@doorda.com>
+Maintainer: Samuel Tan <samuel@doorda.com>
+Description: 'RJDBC' based 'DBI' wrapper for DoordaHost.
+License: AGPL-3
+Encoding: UTF-8
+LazyData: true
+Depends: 
+  R (>= 3.3.0)
+Imports:
+  methods (>= 3.4.4),
+  RJDBC (>= 0.2-7.1),
+  rJava (>= 0.9-11),
+  attempt (>= 0.3.0)
+RoxygenNote: 6.1.1
