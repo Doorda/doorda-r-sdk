@@ -1,18 +1,63 @@
-Package: DoordaHostClient
+Package: DoordaHostSDK
 Type: Package
-Title: DoordaHost Platform DBI Wrapper
-Version: 309.0.0
+Title: DBI Connector to DoordaHost
+Version: 309.1.0
 Author: Samuel Tan <samuel@doorda.com>
 Maintainer: Samuel Tan <samuel@doorda.com>
-Description: 'RJDBC' based 'DBI' wrapper for DoordaHost.
+Description: Implements a 'DBI' compliant interface to DoordaHost based on RPresto packge. Includes basic authentication. 
 License: AGPL-3
 Encoding: UTF-8
 LazyData: true
-Depends: 
-  R (>= 3.3.0)
+Depends:
+    R (>= 3.1.0),
+    methods,
 Imports:
-  methods (>= 3.4.4),
-  RJDBC (>= 0.2-7.1),
-  rJava (>= 0.9-11),
-  attempt (>= 0.3.0)
+    DBI (>= 0.3.0),
+    httr (>= 0.6),
+    openssl,
+    jsonlite,
+    stringi,
+    stats,
+    Rcpp (>= 0.12.7),
+    utils,
+    attempt (>= 0.3.0)
+Suggests:
+    dplyr (>= 0.7.0)
 RoxygenNote: 6.1.1
+LinkingTo: Rcpp
+Collate: 
+    'DoordaHostDriver.R'
+    'DoordaHost.R'
+    'utility_functions.R'
+    'DoordaHostSession.R'
+    'DoordaHostConnection.R'
+    'DoordaHostCursor.R'
+    'DoordaHostResult.R'
+    'RcppExports.R'
+    'request_headers.R'
+    'dbHasCompleted.R'
+    'dbClearResult.R'
+    'dbConnect.R'
+    'dbDataType.R'
+    'dbDisconnect.R'
+    'dbGetInfo.R'
+    'dbSendQuery.R'
+    'json.tabular.to.data.frame.R'
+    'extract.data.R'
+    'parse.response.R'
+    'dbFetch.R'
+    'dbGetQuery.R'
+    'dbListTables.R'
+    'dbExistsTable.R'
+    'dbGetRowCount.R'
+    'dbGetStatement.R'
+    'dbIsValid.R'
+    'dbListFields.R'
+    'dbQuery.R'
+    'dbUnloadDriver.R'
+    'fetch.R'
+    'getTableStats.R'
+    'isConnected.R'
+    'showCatalogs.R'
+    'showSchemas.R'
+    'showTables.R'

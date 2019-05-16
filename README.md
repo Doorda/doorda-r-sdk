@@ -3,11 +3,8 @@
 This package interacts with Doorda Hosted service on Presto for query execution.
 
 ## Features
-- Automatic installation and loading of jdbc driver from https://github.com/doorda/drivers-cli
-- Simplified functions
-
-## Requirements
-- Java 8
+- Simplified Functions
+- Progress Bar when executing queries
 
 ## Installation
 
@@ -17,14 +14,14 @@ require("devtools")
 devtools::install_github("doorda/doorda-r-sdk", dependencies=TRUE)
 ```
 
-## Usage 
+## Usage
 
 ### Create Connection
 
 ```r
-install.packages("DBI")
-require("DBI")
-conn <- dbConnect(DoordaHostClient::DoordaHost(),
+library('DBI')
+library("DoordaHostSDK")
+conn <- dbConnect(DoordaHost(),
                   user='username',
                   password='password',
                   catalog='catlog_name',
@@ -47,19 +44,31 @@ results_df = dbQuery(conn, "SELECT * FROM table_name")
 ```r
 catalog_names = showCatalogs(conn)
 ```
+-
+### Get Schema Names
+
+```r
+schema_names = showSchemas(conn)
+```
+
+### Get Table Names
+
+```r
+table_names = showTables(conn)
+```
+
+
 
 ### Get Table Stats (Currently only number of rows supported)
 
 ```r
-table_stats = getTableStats(conn, "catalog_name", "schema_name", "table_name")
+table_stats = getTableStats(conn, "table_name")
 
 ```
 
-### Problems
+### Get Column Names of Tables
 
-1) `installation of package ‘rJava’ had non-zero exit status`
+```r
+column_names = dbListFields(conn, "table_name")
 
-Solution: 
-Check that Java is installed correctly by running `java -version` in terminal
-Then, run `sudo R CMD javareconf` to register Java with R. 
-
+```
