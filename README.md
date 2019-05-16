@@ -44,7 +44,7 @@ results_df = dbQuery(conn, "SELECT * FROM table_name")
 ```r
 catalog_names = showCatalogs(conn)
 ```
--
+
 ### Get Schema Names
 
 ```r
@@ -56,7 +56,6 @@ schema_names = showSchemas(conn)
 ```r
 table_names = showTables(conn)
 ```
-
 
 
 ### Get Table Stats (Currently only number of rows supported)
