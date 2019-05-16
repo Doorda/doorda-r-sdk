@@ -10,17 +10,17 @@ Encoding: UTF-8
 LazyData: true
 Depends:
     R (>= 3.1.0),
-    methods,
+    methods
 Imports:
     DBI (>= 0.3.0),
     httr (>= 0.6),
+    Rcpp (>= 0.12.7),
+    attempt (>= 0.3.0),
     openssl,
     jsonlite,
     stringi,
     stats,
-    Rcpp (>= 0.12.7),
-    utils,
-    attempt (>= 0.3.0)
+    utils
 Suggests:
     dplyr (>= 0.7.0)
 RoxygenNote: 6.1.1
