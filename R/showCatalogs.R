@@ -21,7 +21,8 @@ showCatalogs <- function(conn, ...) {
   statement <- 'SHOW CATALOGS'
   rv <- dbQuery(conn, statement)
   if (nrow(rv)) {
-    return(rv[['Catalog']])
+    char_vector = rv[['Catalog']]
+    return(char_vector[!char_vector=="system"])
   } else {
     return(character(0))
   }

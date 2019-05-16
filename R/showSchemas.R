@@ -21,7 +21,8 @@ showSchemas <- function(conn, ...) {
   statement <- 'SHOW SCHEMAS'
   rv <- dbQuery(conn, statement)
   if (nrow(rv)) {
-    return(rv[['Schema']])
+    char_vector = rv[['Schema']]
+    return(char_vector[!char_vector=="information_schema"])
   } else {
     return(character(0))
   }
