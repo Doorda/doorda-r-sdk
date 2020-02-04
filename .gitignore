@@ -45,3 +45,14 @@ inst/java/*
 *.Rproj
 
 .DS_Store
+check/
+
+tests/testthat/credentials.dcf
+.Rproj.user
+.Rhistory
+.RData
+*./o
+*./so
+
+
+.idea/

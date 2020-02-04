@@ -1,2 +1,5 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+.bumpversion.cfg
+.github/
+.idea/
