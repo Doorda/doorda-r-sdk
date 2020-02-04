@@ -1,4 +1,6 @@
 # Doorda R SDK
+[![GitHub Action](https://github.com/doorda/doorda-r-sdk/workflows/Unit%20Tests/badge.svg)](https://github.com/Doorda/doorda-r-sdk/actions?query=workflow%3A%22Unit+Tests%22)
+[![GitHub Action](https://github.com/doorda/doorda-r-sdk/workflows/Release%20R%20Package/badge.svg)](https://github.com/Doorda/doorda-r-sdk/actions?query=workflow%3A%22Release+R+Package%22)
 
 This package interacts with Doorda Hosted service on Presto for query execution.
 
