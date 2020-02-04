@@ -129,6 +129,32 @@ for (i in seq_along(.non.complex.types)) {
   # so toupper('bigint') does not give the expected result
   return(stringi::stri_trans_toupper(rv, 'en_US.UTF-8'))
 }
-
+#' Return the corresponding presto data type for the given R \code{object}
+#' @param dbObj A \code{\linkS4class{DoordaHostDriver}} object
+#' @param obj Any R object
+#' @param ... Extra optional parameters, not currently used
+#' @return A \code{character} value corresponding to the Presto type for
+#'         \code{obj}
+#' @rdname dbDataType
+#' @details The default value for unknown classes is \sQuote{VARCHAR}.
+#'
+#' \sQuote{ARRAY}s and \sQuote{MAP}s are supported with some caveats.
+#' Unnamed lists will be treated as \sQuote{ARRAY}s and named lists
+#' will be a \sQuote{MAP}.
+#' All items are expected to be of the same corresponding Presto type,
+#' otherwise the default \sQuote{VARCHAR} value is returned.
+#' The key type for \sQuote{MAP}s is always \sQuote{VARCHAR}.
+#' The \sQuote{value} type for empty lists is always a \sQuote{VARCHAR}.
+#'
+#' @examples
+#' drv <- DoordaHostSDK::DoordaHost()
+#' dbDataType(drv, list())
+#' dbDataType(drv, 1)
+#' dbDataType(drv, NULL)
+#' dbDataType(drv, list(list(list(a=Sys.Date()))))
+#' dbDataType(drv, as.POSIXct('2015-03-01 00:00:00', tz='UTC'))
+#' dbDataType(drv, Sys.time())
+#' # Data types for ARRAY or MAP values can be tricky
+#' all.equal('VARCHAR', dbDataType(drv, list(1, 2, 3L)))
 #' @export
 setMethod('dbDataType', 'DoordaHostDriver', .dbDataType)

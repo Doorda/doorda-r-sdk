@@ -7,6 +7,6 @@ NULL
   return(.fetch.all(result))
 }
 
-#' @rdname DoordaHostConnection-classs
+#' @rdname DoordaHostConnection-class
 #' @export
 setMethod('dbGetQuery', c('DoordaHostConnection', 'character'), .dbGetQuery)
