@@ -1,7 +1,7 @@
 Package: DoordaHostSDK
 Type: Package
 Title: DBI Connector to DoordaHost
-Version: 1.0.0
+Version: 1.1.0
 Author: Samuel Tan <samuel@doorda.com>
 Maintainer: Samuel Tan <samuel@doorda.com>
 Description: Implements a 'DBI' compliant interface to DoordaHost based on RPresto packge. Includes basic authentication. 
